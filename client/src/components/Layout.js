@@ -1,6 +1,9 @@
-import Header from '../Header';
-import Objective from '../Objective'
-import './Layout.css'
+import Header from './Header';
+import Main from './Main';
+import Sidebar from './Sidebar';
+
+import './components.css';
+
 import React, { Component } from 'react'
 
 export class Layout extends Component {
@@ -12,7 +15,13 @@ export class Layout extends Component {
     return (
       <div className='cv-layout'>
         <Header />
-        <Objective />
+
+        <div className="cv-body">
+          <Main />
+          <Sidebar />
+        </div>
+
+
       </div>
     )
   }

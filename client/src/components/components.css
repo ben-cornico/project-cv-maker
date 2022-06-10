@@ -1,0 +1,108 @@
+.component-title::after {
+    content: "";
+    display: block;
+    width: 32px;
+    padding-top: 3px;
+    border-bottom: 2px solid #354458;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    display: grid;
+    gap: 0.25rem;
+}
+
+/* OBJECTIVE  =========================*/
+.cv-objective {
+    text-align: justify;
+}
+
+/* HEADER ============================ */
+.cv-header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #354458;
+    color: #ffffff;
+    font-size: 2.5em;
+}
+
+
+/* MAIN ============================== */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-right: 2rem;
+}
+
+
+/* EXPERIENCE ======================== */
+.exp-container {
+    display: grid;
+    gap: 1rem;
+}
+.exp-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.exp-location-date {
+    font-style: italic;
+}
+
+ul.exp-info > li {
+    margin: 1rem 2rem;
+}
+
+
+/* LAYOUT ============================ */
+.cv-layout {
+    background-color: aliceblue;
+    width: 58rem;
+    height: 74rem;
+}
+
+.cv-body {
+    display: flex;
+    margin: 1.5rem;
+}
+
+/* SKILLS ============================ */
+
+ul.skill-list > li {
+    list-style-type: none;
+}
+
+
+/* EDUCATION ========================= */
+.education-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.education-list > li {
+    list-style-type: none;
+}
+
+.education-degree {
+    font-weight: bold;
+}
+
+.education-location {
+    font-style: italic;
+}
+
+
+/* SIDEBAR ========================== */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* INFO ============================= */
+.info > p{
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}

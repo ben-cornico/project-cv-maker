@@ -1,0 +1,17 @@
+/* EXPERIENCE COMPONENT ====================================== */
+.exp {
+    display: grid;
+}
+
+.exp-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.exp-location-date {
+    font-style: italic;
+}
+
+ul.exp-info > li {
+    margin: 0 2rem;
+}
