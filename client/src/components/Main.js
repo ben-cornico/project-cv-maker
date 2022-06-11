@@ -9,7 +9,7 @@ export class Main extends Component {
       <div className='main'>
         <Objective />
         <Experience />
-    </div>
+      </div>
     )
   }
 }
