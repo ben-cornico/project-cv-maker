@@ -38,6 +38,10 @@ ul {
 
 
 /* EXPERIENCE ======================== */
+.exp {
+    display: grid;
+}
+
 .exp-container {
     display: grid;
     gap: 1rem;
@@ -52,7 +56,7 @@ ul {
 }
 
 ul.exp-info > li {
-    margin: 1rem 2rem;
+    margin: 0 2rem;
 }
 
 
@@ -95,6 +99,17 @@ ul.skill-list > li {
     margin: 0.5rem 0;
 }
 
+/* ICONS ============================= */
+.mdi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 100%;
+    background-color: #b8b8b8;
+}
+
 /* EDUCATION ========================= */
 .education-list {
     display: grid;
@@ -111,4 +126,34 @@ ul.skill-list > li {
 
 .education-location {
     font-style: italic;
+}
+
+
+/* FORM ============================= */
+label {
+    width: 200px;
+    background-color: #354458;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group > input, .input-group > input {
+    width: 20rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-address {
+    display: flex;
+}
+
+label, input {
+    padding: 0.5rem;
+    outline: none;
+    font-size: large;
 }
