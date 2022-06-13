@@ -2,7 +2,7 @@ import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 
-import './components.css';
+import '../components.css';
 
 import React, { Component } from 'react'
 
