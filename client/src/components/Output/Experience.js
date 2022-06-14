@@ -1,57 +1,20 @@
 import React, { Component } from 'react';
+import ExperienceForm from './ExperienceForm';
 
 export class Experience extends Component {
   constructor() {
     super();
+    this.state = {
+      jobList: [<ExperienceForm />],
+    }
 
-    this.state = [
-      {
-        test: "HELLO WORLD",
-        title: <input type="text" name="jobTitle" id="jobTitle" placeholder='Job Title'/>,
-        locationDate: <input type="text" name="locationDate" id="locationDate" placeholder='Location / Date'/>,
-        info: [
-          <input type="text" name="jobInfo" id="jobInfo" placeholder='Job Information'/>
-        ]
-      }
-    ];
-    this.addJobDesc = this.addJobDesc.bind(this);
     this.addJob = this.addJob.bind(this)
-    this.jobList = this.state.map((job, index) => {
-      return (
-        <div className="exp">
-          <div className="exp-title">
-            { job.title }
-          </div>
-
-          <p className="exp-location-date">
-            {job.locationDate}
-          </p>
-          <ul className="exp-info">
-            { job.info }
-          </ul>
-          <button className='btn-add-desc' data-key={index} onClick={this.addJobDesc}>Add description</button>
-        </div>
-      )
-      
-    })
-
-    
   }
 
-  addJobDesc = (e) => {
-    const index = e.target.getAttribute('data-key');
-    console.log(e.target.getAttribute('data-key'))
-    this.setState(this.state[index].info.concat(<input type="text" name="jobInfo" id="jobInfo" placeholder='Job Information'/>))
-    console.log(this.state[index])
-  }
 
   addJob() {
-    this.setState.concat({
-      title: <input type="text" name="jobTitle" id="jobTitle" />,
-      locationDate: <input type="text" name="locationDate" id="locationDate" />,
-      info: [
-        <input type="text" name="jobInfo" id="jobInfo" />
-      ]
+    this.setState({
+      jobList: [...this.state.jobList, <ExperienceForm />]
     })
   }
 
@@ -60,22 +23,8 @@ export class Experience extends Component {
       <div className='experience'>
         <h2 className='component-title'>EXPERIENCE</h2>
         <div className="exp-container">
-          {
-            this.jobList
-          }
+          {this.state.jobList}
           <button onClick={this.addJob}>Add Experience</button>
-            {/* <div className="exp">
-                <p className="exp-title">
-                    <input type="text" name="jobTitle" id="jobTitle" placeholder='Job Title'/>
-                </p>
-                <p className="exp-location-date">
-                  <input type="text" name="jobLocationDate" id="jobLocationDate" placeholder='Location / Date' />
-                </p>
-                    <ul className='exp-info'>
-                    </ul>
-                    <button className='btn-add-desc' onClick={this.addJobDesc(0)}>Add description</button>
-            </div> */}
-
             <div className="exp">
                 <span className="exp-title">
                     TERSTING TESTING
