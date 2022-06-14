@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import AutoHeightTextArea from './AutoHeightTextArea';
 export class ExperienceForm extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +14,7 @@ export class ExperienceForm extends Component {
     addJobInfo = () => {
         console.log("ADD INFO")
         this.setState({
-            jobInfo: [...this.state.jobInfo, <li><input type="text" name="jobInfo" id="jobInfo" placeholder='Job Info'/></li>]
+            jobInfo: [...this.state.jobInfo, <li><AutoHeightTextArea textareaName="jobInfo" textareaId="jobInfo" tempText='Job Info'/></li>]
         })
     }
   render() {
