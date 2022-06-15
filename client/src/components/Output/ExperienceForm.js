@@ -8,32 +8,31 @@ export class ExperienceForm extends Component {
             jobInfo: []
         }
 
-        this.addJobInfo = this.addJobInfo.bind(this)
     }
 
-    addJobInfo = () => {
-        console.log("ADD INFO")
-        this.setState({
-            jobInfo: [...this.state.jobInfo, <li><AutoHeightTextArea textareaName="jobInfo" textareaId="jobInfo" tempText='Job Info'/></li>]
-        })
-    }
+
   render() {
     return (
         <div className="exp">
             <p className="exp-title">
-                <input type="text" name="jobTitle" id="jobTitle" placeholder='Job Title'/>
+                LOREM IPSUM
             </p>
             <p className="exp-location-date">
-                <input type="text" name="jobLocationDate" id="jobLocationDate" placeholder='Location / Date' />
+                Location Location / 2013 - 2016
             </p>
             <div className='info-container'>
             <ul className='exp-info'>
-                    {this.state.jobInfo}
-                </ul>
-                <div className="btn-group">
-                    <button onClick={this.addJobInfo}>Add Info</button>
-                    <button>Delete</button>
-                </div>
+                <li>
+                    Etiam ultrices ex non magna aliquam, nec mollis velit venenatis.
+                </li>
+                <li>
+                    Duis sit amet metus eget lacus laoreet congue et ac ante.
+                </li>
+                <li>
+                Nullam augue odio, pellentesque luctus rutrum vel, cursus ut nisl. Donec suscipit orci non neque bibendum malesuada.
+                </li>
+            </ul>
+
             </div>
                 
         </div>

@@ -7,10 +7,6 @@
     margin-bottom: 0.5rem;
 }
 
-ul {
-    display: grid;
-    gap: 0.25rem;
-}
 
 /* OBJECTIVE  =========================*/
 .cv-objective {
@@ -58,20 +54,8 @@ ul {
 }
 
 ul.exp-info > li {
-    font-size: medium;
     margin-left: 2rem;
-    margin: 1re
 }
-
-ul.exp-info {
-    width: 100%;
-}
-
-ul.exp-info > li > input {
-    font-size: medium;
-    width: 100%;
-}
-
 
 
 
@@ -200,7 +184,7 @@ label, input {
     width: 100%;
     resize: none;
     font-size: large;
-
+    text-align: justify;
 }
 
 input, textarea {
@@ -208,9 +192,6 @@ input, textarea {
     margin: 0.1rem;
 }
 
-textarea, input {
-    padding: .25rem;
-}
 
 textarea {
     overflow: hidden;
@@ -218,4 +199,9 @@ textarea {
     border: solid 1px #a7a7a7;
     font-size: medium;
     height: 2rem;
+}
+
+
+li {
+    margin: 0.25rem 0;
 }

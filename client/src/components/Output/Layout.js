@@ -11,9 +11,14 @@ export class Layout extends Component {
         super(props);
     }
 
+    test(e) {
+      e.preventDefault();
+      console.log(e)
+    }
+
   render() {
     return (
-      <div className='cv-layout'>
+      <form className='cv-layout' onSubmit={this.test} >
         <Header />
 
         <div className="cv-body">
@@ -22,7 +27,7 @@ export class Layout extends Component {
         </div>
 
 
-      </div>
+      </form>
     )
   }
 }
