@@ -9,14 +9,11 @@ export class FormPersonalInfo extends Component {
             name: '',
         }
 
-        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(e) {
-        console.log('agaga')
-        this.setState({
-            name: e.target.value,
-        })
+        console.log(e)
+
     }
   render() {
     return (
@@ -25,7 +22,7 @@ export class FormPersonalInfo extends Component {
 
             <div className="form-group">
                 <label htmlFor="fName">First Name</label>
-                <input type="text" id='fName' onChange={this.handleChange} />
+                <input type="text" id='fName' onChange={() => this.handleChange(this)} />
             </div>
 
             <div className="form-group">

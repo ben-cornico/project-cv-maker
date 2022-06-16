@@ -6,7 +6,7 @@ export class Header extends Component {
 
   render() {
     return (
-      <div className='cv-header'><input type="text" name="fullName" id="fullName" placeholder='Full Name'/></div>
+      <div className='cv-header'>BEN CARLO CORNICO</div>
     )
   }
 }

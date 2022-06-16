@@ -130,7 +130,7 @@ ul.skill-list > li {
 
 
 /* FORM ============================= */
-/* fieldset > div {
+fieldset > div {
     margin: 0.5rem;
 }
 fieldset {
@@ -168,7 +168,7 @@ label, input {
     outline: none;
     font-size: large;
 }
- */
+
 
 
 #fullName {
