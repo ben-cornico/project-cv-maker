@@ -19,7 +19,7 @@ export class Layout extends Component {
   render() {
     return (
       <form className='cv-layout' onSubmit={this.test} >
-        <Header />
+        <Header name={this.props.name}/>
 
         <div className="cv-body">
           <Main />

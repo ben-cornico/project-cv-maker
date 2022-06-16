@@ -6,7 +6,7 @@ export class Header extends Component {
 
   render() {
     return (
-      <div className='cv-header'>BEN CARLO CORNICO</div>
+      <div className='cv-header'>{this.props.name}</div>
     )
   }
 }

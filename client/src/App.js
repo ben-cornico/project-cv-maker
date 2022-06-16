@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Layout from './components/Output/Layout'
 import Form from './components/Form/Form'
+import MainOutput from './components/MainOutput';
 import './App.css';
 
 export class App extends Component {
@@ -11,8 +12,7 @@ export class App extends Component {
     console.log(<Form />)
     return (
       <div className="App">
-        <Form />
-        <Layout />
+        <MainOutput />
       </div>
     )
   }
