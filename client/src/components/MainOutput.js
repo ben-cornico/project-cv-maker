@@ -24,6 +24,18 @@ export class MainOutput extends Component {
         this.addressHandleChange = this.addressHandleChange.bind(this)
     }
 
+    infoHandleChange = (e) => {
+        
+        this.setState({
+            info: {
+                info: { ...this.state.info,
+                    [e.target.name]: e.target.value
+                    
+                }
+            }
+        })
+    }
+
     addressHandleChange = (e) => {
 
         this.setState({
@@ -75,7 +87,6 @@ export class MainOutput extends Component {
             </fieldset>
         </form>
 
-        <button onClick={console.log(this.state)}>MY BUTTOn</button>
         <Layout data={this.state}/>
       </>
     )
