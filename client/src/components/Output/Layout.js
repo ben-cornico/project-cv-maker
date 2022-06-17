@@ -7,23 +7,19 @@ import '../components.css';
 import React, { Component } from 'react'
 
 export class Layout extends Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super();
 
-    test(e) {
-      e.preventDefault();
-      console.log(e)
-    }
-
+    console.log(props)
+  }
   render() {
     return (
       <form className='cv-layout' onSubmit={this.test} >
-        <Header name={this.props.name}/>
+        <Header name={this.props.data.info.name}/>
 
         <div className="cv-body">
           <Main />
-          <Sidebar />
+          <Sidebar data={this.props.data.info}/>
         </div>
 
 

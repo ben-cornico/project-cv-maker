@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
 import Layout from './Output/Layout';
-import Form from './Form/Form';
 
 export class MainOutput extends Component {
     constructor() {
         super();
 
         this.state = {
-            name: ''
+            info: {
+                name: '',
+                email: '',
+                pNumber: '',
+                linkedin: '',
+                address: {
+                    addressLine1: '',
+                    city: '',
+                    stateProvince: '',
+                    zipPostal: ''
+                }
+            }
+            
         }
 
-        this.nameInput = this.nameInput.bind(this)
+        this.addressHandleChange = this.addressHandleChange.bind(this)
     }
 
-    nameInput(e) {
+    addressHandleChange = (e) => {
+
         this.setState({
-            name: e.target.value
+            info: {
+                ...this.state.info, 
+                address: {
+                    ...this.state.info.address, [e.target.name]: e.target.value
+                }
+            }
         })
-        console.log(this.state)
     }
   render() {
     return (
@@ -27,39 +43,40 @@ export class MainOutput extends Component {
             <legend>Personal Information</legend>
 
             <div className="form-group">
-                <label htmlFor="fName">First Name</label>
-                <input type="text" id='fName' onChange={this.nameInput} />
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="fName">Last Name</label>
-                <input type="text" id='lName' />
+                <label htmlFor="fName">Full Name</label>
+                <input type="text" id='fName' name='name' value={this.state.info.name} onChange={(e) => this.setState({info: {...this.state.info, name: e.target.value}})} />
             </div>
 
             <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" onChange={(e) => this.setState({info: {...this.state.info, email: e.target.value}})}/>
             </div>
 
             <div className="form-group">
                 <label htmlFor="pNumber">Phone Number</label>
-                <input type="text" id='pNumber' name='pNumber' />
+                <input type="text" id='pNumber' name='pNumber' onChange={(e) => this.setState({info: {...this.state.info, pNumber: e.target.value}})}/>
             </div>
 
             <div className="form-address">
                 <label htmlFor="address">Address</label>
                 <div className="input-group">
-                    <input type="text" id="address" placeholder='Address Line 1'/>
-                    <input type="text" id="address2" placeholder='Address Line 2 (Optional)'/>
-                    <input type="text" id="city" placeholder='City'/>
-                    <input type="text" placeholder='State/Province' />
-                    <input type="text" placeholder='Zip/Postal Code' />
+                    <input type="text" id="address" name='addressLine1' placeholder='Address Line 1' onChange={this.addressHandleChange}/>
+                    <input type="text" id="city" placeholder='City' name='city' onChange={this.addressHandleChange}/>
+                    <input type="text" placeholder='State/Province' name='stateProvince' onChange={this.addressHandleChange}/>
+                    <input type="text" placeholder='Zip/Postal Code' name='zipPostal' onChange={this.addressHandleChange}/>
                 </div>
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="linkedin">Linkedin</label>
+                <input type="text" id='linkedin' name='linkedin' onChange={(e) => this.setState({info: {...this.state.info, linkedin: e.target.value}})}/>
             </div>
         
             </fieldset>
         </form>
-        <Layout name={this.state.name}/>
+
+        <button onClick={console.log(this.state)}>MY BUTTOn</button>
+        <Layout data={this.state}/>
       </>
     )
   }
