@@ -22,16 +22,14 @@ export class MainOutput extends Component {
         }
 
         this.addressHandleChange = this.addressHandleChange.bind(this)
+        this.infoHandleChange = this.infoHandleChange.bind(this)
     }
 
     infoHandleChange = (e) => {
         
         this.setState({
             info: {
-                info: { ...this.state.info,
-                    [e.target.name]: e.target.value
-                    
-                }
+                ...this.state.info, [e.target.name]: e.target.value
             }
         })
     }
@@ -56,17 +54,17 @@ export class MainOutput extends Component {
 
             <div className="form-group">
                 <label htmlFor="fName">Full Name</label>
-                <input type="text" id='fName' name='name' value={this.state.info.name} onChange={(e) => this.setState({info: {...this.state.info, name: e.target.value}})} />
+                <input type="text" id='fName' name='name' value={this.state.info.name} onChange={this.infoHandleChange} />
             </div>
 
             <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" onChange={(e) => this.setState({info: {...this.state.info, email: e.target.value}})}/>
+                <input type="email" name="email" id="email" onChange={this.infoHandleChange}/>
             </div>
 
             <div className="form-group">
                 <label htmlFor="pNumber">Phone Number</label>
-                <input type="text" id='pNumber' name='pNumber' onChange={(e) => this.setState({info: {...this.state.info, pNumber: e.target.value}})}/>
+                <input type="text" id='pNumber' name='pNumber' onChange={this.infoHandleChange}/>
             </div>
 
             <div className="form-address">
@@ -81,12 +79,12 @@ export class MainOutput extends Component {
 
             <div className="form-group">
                 <label htmlFor="linkedin">Linkedin</label>
-                <input type="text" id='linkedin' name='linkedin' onChange={(e) => this.setState({info: {...this.state.info, linkedin: e.target.value}})}/>
+                <input type="text" id='linkedin' name='linkedin' onChange={this.infoHandleChange}/>
             </div>
         
             </fieldset>
         </form>
-
+<button onClick={console.log(this.state)}>CLICK</button>
         <Layout data={this.state}/>
       </>
     )
