@@ -7,10 +7,6 @@ export class Info extends Component {
 
     console.log(props.data.address)
   }
-
-  capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
   render() {
     return (
       <div className='info'>

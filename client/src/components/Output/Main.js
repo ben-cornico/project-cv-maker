@@ -9,7 +9,7 @@ export class Main extends Component {
   render() {
     return (
       <div className='main'>
-        <Profile />
+        <Profile data={this.props.prof}/>
         <Experience />
       </div>
     )

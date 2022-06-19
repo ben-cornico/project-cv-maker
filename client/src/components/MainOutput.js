@@ -17,12 +17,19 @@ export class MainOutput extends Component {
                     stateProvince: '',
                     zipPostal: ''
                 }
+            },
+            profSummary: '',
+            exp: {
+                name: '',
+                locationYear: '',
+                info: []
             }
             
         }
 
         this.addressHandleChange = this.addressHandleChange.bind(this)
         this.infoHandleChange = this.infoHandleChange.bind(this)
+        this.profChange = this.profChange.bind(this)
     }
 
     infoHandleChange = (e) => {
@@ -44,6 +51,13 @@ export class MainOutput extends Component {
                 }
             }
         })
+    }
+    profChange = (e) => {
+        this.setState({
+            ...this.state,
+            [e.target.name]: e.target.value,
+        })
+        console.log(e.target.name)
     }
   render() {
     return (
@@ -82,6 +96,14 @@ export class MainOutput extends Component {
                 <input type="text" id='linkedin' name='linkedin' onChange={this.infoHandleChange}/>
             </div>
         
+            </fieldset>
+
+            <fieldset className='fieldset-profile'>
+                <legend>Profile</legend>
+                <div className="form-group">
+                    <label htmlFor="profSummary">Profile Summary</label>
+                    <textarea name="profSummary" id="profSummary" onChange={this.profChange}></textarea>
+                </div>
             </fieldset>
         </form>
 <button onClick={console.log(this.state)}>CLICK</button>

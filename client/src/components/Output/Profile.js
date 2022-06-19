@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AutoHeightTextArea from './AutoHeightTextArea';
 
 export class Profile extends Component {
-  constructor() {
+  constructor(props) {
     super();
     
   }
@@ -12,7 +12,7 @@ export class Profile extends Component {
         <h2 className='component-title'>Profile</h2>
         <div className="profile">
           <p className="profile">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin convallis magna quis erat tempor, et eleifend augue mattis. Sed imperdiet libero sed ipsum rhoncus, sed tincidunt felis sollicitudin.
+            {this.props.data}
           </p>
         </div>
       </div>

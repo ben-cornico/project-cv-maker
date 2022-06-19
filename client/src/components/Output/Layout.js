@@ -18,7 +18,7 @@ export class Layout extends Component {
         <Header name={this.props.data.info.name}/>
 
         <div className="cv-body">
-          <Main />
+          <Main prof={this.props.data.profSummary} />
           <Sidebar data={this.props.data.info}/>
         </div>
 
