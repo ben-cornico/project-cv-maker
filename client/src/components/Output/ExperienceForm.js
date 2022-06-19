@@ -2,39 +2,41 @@ import React, { Component } from 'react';
 import AutoHeightTextArea from './AutoHeightTextArea';
 export class ExperienceForm extends Component {
     constructor(props) {
-        super(props);
-
+        super();
+        
         this.state = {
-            jobInfo: []
+            jobInfo: [<li><input type='text' id="info" name="info" /></li>]
         }
 
+        this.addInfo = this.addInfo.bind(this)
     }
 
+    addInfo = (e) => {
+        e.preventDefault();
+        this.setState({
+            jobInfo: [...this.state.jobInfo, <li><input type='text' id="info" name="info" /></li>]
+        })
+    }
 
   render() {
     return (
-        <div className="exp">
-            <p className="exp-title">
-                LOREM IPSUM
-            </p>
-            <p className="exp-location-date">
-                Location Location / 2013 - 2016
-            </p>
-            <div className='info-container'>
-            <ul className='exp-info'>
-                <li>
-                    Etiam ultrices ex non magna aliquam, nec mollis velit venenatis.
-                </li>
-                <li>
-                    Duis sit amet metus eget lacus laoreet congue et ac ante.
-                </li>
-                <li>
-                Nullam augue odio, pellentesque luctus rutrum vel, cursus ut nisl. Donec suscipit orci non neque bibendum malesuada.
-                </li>
-            </ul>
-
+        <div className="div-profile" data-key={this.props.key}>
+            <div className="form-group">
+                <label htmlFor="expTitle">Title</label>
+                <input type="text" name="name" id="expTitle" onChange={this.props.func}/>
             </div>
-                
+
+            <div className="form-group">
+                <label htmlFor="locationYear">Location / Year</label>
+                <input type="text" name="locationYear" id="locationYear" />
+            </div>
+
+            <div className="exp-info">
+                <ul>
+                    {this.state.jobInfo}
+                </ul>
+                <button className='btn-add' onClick={this.addInfo}>Add Info</button>
+            </div>
         </div>
     )
   }
