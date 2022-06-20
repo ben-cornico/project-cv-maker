@@ -7,8 +7,6 @@ import Education from './Education';
 export class Sidebar extends Component {
   constructor(props) {
     super()
-
-    console.log(props)
   }
   render() {
     return (

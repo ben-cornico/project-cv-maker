@@ -5,8 +5,9 @@ export class ExperienceForm extends Component {
         super();
         
         this.state = {
-            jobInfo: [<li><input type='text' id="info" name="info" /></li>]
+            jobInfo: [<li><input type='text' id="info" name="info" data-key='0' onChange={props.onInfoChange}/></li>]
         }
+        console.log(props)
 
         this.addInfo = this.addInfo.bind(this)
     }
@@ -14,10 +15,9 @@ export class ExperienceForm extends Component {
     addInfo = (e) => {
         e.preventDefault();
         this.setState({
-            jobInfo: [...this.state.jobInfo, <li><input type='text' id="info" name="info" /></li>]
+            jobInfo: [...this.state.jobInfo, <li><input type='text' id="info" name="info" data-key={this.state.jobInfo.length} onChange={this.props.onInfoChange} /></li>]
         })
-
-        this.props.addInfo();
+        this.props.addInfo(e)
     }
 
   render() {
@@ -37,7 +37,7 @@ export class ExperienceForm extends Component {
                 <ul>
                     {this.state.jobInfo}
                 </ul>
-                <button className='btn-add' onClick={this.addInfo}>Add Info</button>
+                <button className='btn-add' onClick={this.addInfo} >Add Info</button>
             </div>
         </div>
     )

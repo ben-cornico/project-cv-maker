@@ -6,11 +6,11 @@ export class ExperienceFormComponent extends Component {
         super();
         this.state = {
             exp: [
-                <ExperienceForm onChange={props.onChange}  keyIndex='0' />
+                <ExperienceForm onChange={props.onChange}  keyIndex='0' addInfo={props.addInfo} onInfoChange={props.onInfoChange}/>
             ]
         }
 
-        console.log(this.state.exp.length)
+        console.log(props)
 
         this.add = this.add.bind(this)
     }
@@ -18,9 +18,8 @@ export class ExperienceFormComponent extends Component {
     add = (e) => {
         e.preventDefault();
         this.setState({
-            exp: [...this.state.exp, <ExperienceForm onChange={this.props.onChange} keyIndex={this.state.exp.length} />]
+            exp: [...this.state.exp, <ExperienceForm onChange={this.props.onChange} keyIndex={this.state.exp.length} addInfo={this.props.addInfo} onInfoChange={this.props.onInfoChange}/>]
         })
-        console.log(this.counter)
         this.props.func();
     }
   render() {

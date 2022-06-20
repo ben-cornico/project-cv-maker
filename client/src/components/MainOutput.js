@@ -41,12 +41,36 @@ export class MainOutput extends Component {
         
         items[key] = {...items[key], [e.target.name]: e.target.value}
 
-        console.log(this.state.exp[key])
         this.setState({
           items
         })
+
         console.log(this.state)
     }
+
+    handleInfoOnChange = (e) => {
+        const expKey = e.target.parentNode.parentNode.parentNode.parentNode.dataset.key;
+        const infoKey = e.target.dataset.key;
+        let items = this.state.exp[expKey].info;
+
+        items[infoKey] = [...items[infoKey], e.target.value]
+
+        items[infoKey] = e.target.value;
+        this.setState({
+            items
+        })
+        console.log(this.state)
+    }
+
+    addInfo = (e) => {
+        let items = this.state.exp
+        const expKey = e.target.parentNode.parentNode.dataset.key;
+        items[expKey] ={...items[expKey], info: [...items[expKey].info, '']}
+        this.setState({
+            items
+        })
+    }
+
     addExp = (e) => {
         this.setState({
             ...this.state, exp: [...this.state.exp, { name: '', locationYear: '', info: ['']}]
@@ -129,10 +153,9 @@ export class MainOutput extends Component {
 
             <fieldset className="fieldset-exp">
                 <legend>Experience</legend>
-                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} />
+                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange}/>
             </fieldset>
         </form>
-<button onClick={console.log(this.state)}>CLICK</button>
         <Layout data={this.state}/>
       </>
     )

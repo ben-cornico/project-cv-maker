@@ -4,7 +4,7 @@ import ExperienceForm from './ExperienceForm';
 export class Experience extends Component {
   constructor(props) {
     super();
-    console.log(props.exp[0].name)
+    console.log(props)
   }
 
 
