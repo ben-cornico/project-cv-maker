@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Layout from './Output/Layout';
+import ExperienceFormComponent from './Output/ExperienceFormComponent';
 
 export class MainOutput extends Component {
     constructor() {
         super();
-
         this.state = {
             info: {
                 name: '',
@@ -19,17 +19,38 @@ export class MainOutput extends Component {
                 }
             },
             profSummary: '',
-            exp: {
+            exp: [{
                 name: '',
                 locationYear: '',
-                info: []
-            }
+                info: ['']
+            }]
             
         }
 
         this.addressHandleChange = this.addressHandleChange.bind(this)
         this.infoHandleChange = this.infoHandleChange.bind(this)
         this.profChange = this.profChange.bind(this)
+
+
+    }
+
+    handleExpOnChange = (e) => {
+        let items = this.state.exp;
+        const key = e.target.parentNode.parentNode.dataset.key;
+
+        
+        items[key] = {...items[key], [e.target.name]: e.target.value}
+
+        console.log(this.state.exp[key])
+        this.setState({
+          items
+        })
+        console.log(this.state)
+    }
+    addExp = (e) => {
+        this.setState({
+            ...this.state, exp: [...this.state.exp, { name: '', locationYear: '', info: ['']}]
+        })
     }
 
     infoHandleChange = (e) => {
@@ -104,6 +125,11 @@ export class MainOutput extends Component {
                     <label htmlFor="profSummary">Profile Summary</label>
                     <textarea name="profSummary" id="profSummary" onChange={this.profChange}></textarea>
                 </div>
+            </fieldset>
+
+            <fieldset className="fieldset-exp">
+                <legend>Experience</legend>
+                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} />
             </fieldset>
         </form>
 <button onClick={console.log(this.state)}>CLICK</button>

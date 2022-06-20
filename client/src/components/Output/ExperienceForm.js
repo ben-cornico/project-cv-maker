@@ -16,19 +16,21 @@ export class ExperienceForm extends Component {
         this.setState({
             jobInfo: [...this.state.jobInfo, <li><input type='text' id="info" name="info" /></li>]
         })
+
+        this.props.addInfo();
     }
 
   render() {
     return (
-        <div className="div-profile" data-key={this.props.key}>
+        <div className="div-experience" data-key={this.props.keyIndex}>
             <div className="form-group">
                 <label htmlFor="expTitle">Title</label>
-                <input type="text" name="name" id="expTitle" onChange={this.props.func}/>
+                <input type="text" name="name" id="expTitle" onChange={this.props.onChange}/>
             </div>
 
             <div className="form-group">
                 <label htmlFor="locationYear">Location / Year</label>
-                <input type="text" name="locationYear" id="locationYear" />
+                <input type="text" name="locationYear" id="locationYear" onChange={this.props.onChange}/>
             </div>
 
             <div className="exp-info">

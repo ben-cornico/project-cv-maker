@@ -6,11 +6,14 @@ import ExperienceForm from './ExperienceForm';
 import '../components.css';
 
 export class Main extends Component {
+  constructor(props) {
+    super();
+  }
   render() {
     return (
       <div className='main'>
         <Profile data={this.props.prof}/>
-        <Experience />
+        <Experience exp={this.props.exp}/>
       </div>
     )
   }
