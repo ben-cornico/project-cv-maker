@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 
 export class Skills extends Component {
+  constructor(props) {
+    super();
+    console.log(props.skills);
+  }
   render() {
     return (
       <div className='skills'>
         <h2 className='component-title'>SKILLS</h2>
         <ul className="skill-list">
-            <li>Skill#1</li>
-            <li>Skill#2</li>
-            <li>Skill#3</li>
-            <li>Skill#4</li>
-            <li>Skill#5</li>
-            <li>Skill#6</li>
+          {this.props.skills.map((skill) => {
+            return (
+              <li>{skill ? skill : 'Skill Name'}</li>
+            )
+          })}
         </ul>
       </div>
     )

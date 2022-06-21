@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './Output/Layout';
 import ExperienceFormComponent from './Output/ExperienceFormComponent';
+import Skills from './Form/Skills';
 
 export class MainOutput extends Component {
     constructor() {
@@ -23,14 +24,15 @@ export class MainOutput extends Component {
                 name: '',
                 locationYear: '',
                 info: ['']
-            }]
+            }],
+            skills: [''],
             
         }
 
         this.addressHandleChange = this.addressHandleChange.bind(this)
         this.infoHandleChange = this.infoHandleChange.bind(this)
         this.profChange = this.profChange.bind(this)
-
+        this.handleSkillChange = this.handleSkillChange.bind(this)
 
     }
 
@@ -97,6 +99,26 @@ export class MainOutput extends Component {
             }
         })
     }
+
+    addSkill = (e) => {
+        this.setState({
+            ...this.state,
+            skills: [...this.state.skills, '']
+        })
+    }
+
+    handleSkillChange = (e) => {
+        const key = e.target.dataset.key
+        const skills = this.state.skills;
+        skills[key] = e.target.value
+
+        this.setState({
+            ...this.state,
+            skills: [...skills]
+        })
+    }
+
+
     profChange = (e) => {
         this.setState({
             ...this.state,
@@ -155,6 +177,8 @@ export class MainOutput extends Component {
                 <legend>Experience</legend>
                 <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange}/>
             </fieldset>
+
+            <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill}/>
         </form>
         <Layout data={this.state}/>
       </>

@@ -7,12 +7,14 @@ import Education from './Education';
 export class Sidebar extends Component {
   constructor(props) {
     super()
+
+    console.log(props)
   }
   render() {
     return (
       <div className='sidebar'>
         <Info data={this.props.data}/>
-        <Skills />
+        <Skills skills={this.props.skills}/>
         <Education />
       </div>
     )
