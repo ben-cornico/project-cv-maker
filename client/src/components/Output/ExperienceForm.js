@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AutoHeightTextArea from './AutoHeightTextArea';
 export class ExperienceForm extends Component {
     constructor(props) {
         super();

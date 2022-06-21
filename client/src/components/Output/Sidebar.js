@@ -15,7 +15,7 @@ export class Sidebar extends Component {
       <div className='sidebar'>
         <Info data={this.props.data}/>
         <Skills skills={this.props.skills}/>
-        <Education />
+        <Education edu={this.props.edu}/>
       </div>
     )
   }

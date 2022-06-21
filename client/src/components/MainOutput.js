@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Layout from './Output/Layout';
 import ExperienceFormComponent from './Output/ExperienceFormComponent';
 import Skills from './Form/Skills';
+import Education from './Form/Education';
 
 export class MainOutput extends Component {
     constructor() {
@@ -26,13 +27,17 @@ export class MainOutput extends Component {
                 info: ['']
             }],
             skills: [''],
-            
+            education: [{
+                degreeName: '',
+                universityLocation: '',
+                year: ''
+            }]
         }
 
-        this.addressHandleChange = this.addressHandleChange.bind(this)
-        this.infoHandleChange = this.infoHandleChange.bind(this)
-        this.profChange = this.profChange.bind(this)
-        this.handleSkillChange = this.handleSkillChange.bind(this)
+        this.addressHandleChange = this.addressHandleChange.bind(this);
+        this.infoHandleChange = this.infoHandleChange.bind(this);
+        this.profChange = this.profChange.bind(this);
+        this.handleSkillChange = this.handleSkillChange.bind(this);
 
     }
 
@@ -126,6 +131,24 @@ export class MainOutput extends Component {
         })
         console.log(e.target.name)
     }
+
+    addEduc = (e) => {
+        this.setState({
+            ...this.state,
+            education: [...this.state.education, {degreeName: '', universityLocation: '', year: ''}]
+        })
+    }
+
+    handleEducChange = (e) => {
+        const educKey = e.target.parentNode.parentNode.dataset.key;
+        const items = this.state.education;
+        items[educKey] = {...items[educKey], [e.target.name]: e.target.value}
+        this.setState({
+            ...this.state,
+            items
+        })
+    }
+
   render() {
     return (
       <>
@@ -179,6 +202,8 @@ export class MainOutput extends Component {
             </fieldset>
 
             <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill}/>
+
+            <Education addEduc={this.addEduc} onChange={this.handleEducChange}/>
         </form>
         <Layout data={this.state}/>
       </>
