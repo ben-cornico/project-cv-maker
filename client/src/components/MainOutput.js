@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Layout from './Output/Layout';
-import ExperienceFormComponent from './Output/ExperienceFormComponent';
+import ExperienceFormComponent from './Form/ExperienceFormComponent';
 import Skills from './Form/Skills';
 import Education from './Form/Education';
+import PersonalInfo from './Form/PersonalInfo';
+import ProfileSummary from './Form/ProfileSummary';
 
 export class MainOutput extends Component {
     constructor() {
@@ -153,48 +155,8 @@ export class MainOutput extends Component {
     return (
       <>
         <form>
-            <fieldset className='personal-info'>
-            <legend>Personal Information</legend>
-
-            <div className="form-group">
-                <label htmlFor="fName">Full Name</label>
-                <input type="text" id='fName' name='name' value={this.state.info.name} onChange={this.infoHandleChange} />
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" onChange={this.infoHandleChange}/>
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="pNumber">Phone Number</label>
-                <input type="text" id='pNumber' name='pNumber' onChange={this.infoHandleChange}/>
-            </div>
-
-            <div className="form-address">
-                <label htmlFor="address">Address</label>
-                <div className="input-group">
-                    <input type="text" id="address" name='addressLine1' placeholder='Address Line 1' onChange={this.addressHandleChange}/>
-                    <input type="text" id="city" placeholder='City' name='city' onChange={this.addressHandleChange}/>
-                    <input type="text" placeholder='State/Province' name='stateProvince' onChange={this.addressHandleChange}/>
-                    <input type="text" placeholder='Zip/Postal Code' name='zipPostal' onChange={this.addressHandleChange}/>
-                </div>
-            </div>
-
-            <div className="form-group">
-                <label htmlFor="linkedin">Linkedin</label>
-                <input type="text" id='linkedin' name='linkedin' onChange={this.infoHandleChange}/>
-            </div>
-        
-            </fieldset>
-
-            <fieldset className='fieldset-profile'>
-                <legend>Profile</legend>
-                <div className="form-group">
-                    <label htmlFor="profSummary">Profile Summary</label>
-                    <textarea name="profSummary" id="profSummary" onChange={this.profChange}></textarea>
-                </div>
-            </fieldset>
+            <PersonalInfo infoChange={this.infoHandleChange} addressChange={this.addressHandleChange}/>
+            <ProfileSummary profChange={this.profChange}/>
 
             <fieldset className="fieldset-exp">
                 <legend>Experience</legend>

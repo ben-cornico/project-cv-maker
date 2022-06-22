@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
-import AutoHeightTextArea from './AutoHeightTextArea';
 
 export class Profile extends Component {
-  constructor(props) {
-    super();
-    
-  }
   render() {
     return (
       <div className='objective'>
