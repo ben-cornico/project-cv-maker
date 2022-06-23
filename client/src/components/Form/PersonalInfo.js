@@ -24,7 +24,7 @@ export class PersonalInfo extends Component {
 
             <div className="form-address">
                 <label htmlFor="address">Address</label>
-                <div className="input-group">
+                <div className="input-group-address">
                     <input type="text" id="address" name='addressLine1' placeholder='Address Line 1' onChange={this.props.addressChange}/>
                     <input type="text" id="city" placeholder='City' name='city' onChange={this.props.addressChange}/>
                     <input type="text" placeholder='State/Province' name='stateProvince' onChange={this.props.addressChange}/>

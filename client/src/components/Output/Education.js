@@ -24,25 +24,6 @@ export class Education extends Component {
             )
           })}
 
-            {/* <li className='education-container'>
-                <p className="education-degree">DEGREE NAME / MAJOR</p>
-                <p className="education-location">
-                    University, Location
-                </p>
-                <p className="education-year">
-                    2007 - 2013
-                </p>
-            </li>
-
-            <li className='education-container'>
-                <p className="education-degree">DEGREE NAME / MAJOR</p>
-                <p className="education-location">
-                    University, Location
-                </p>
-                <p className="education-year">
-                    2007 - 2013
-                </p>
-            </li> */}
         </ul>
       </div>
     )

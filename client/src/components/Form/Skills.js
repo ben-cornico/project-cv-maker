@@ -19,16 +19,20 @@ export class Skills extends Component {
     }
   render() {
     return (
-      <fieldset>
+      <fieldset className='fieldset-skills'>
         <legend>Skills</legend>
-            <ul>
-                {this.state.skills.map(skillInput => {
-                  return(
-                    <li>{skillInput}</li>
-                  )
-                })}
-            </ul>
-            <button className="btn-add-skill" onClick={this.addSkill}>Add skill</button>
+        <label>Skill list</label>
+        <div className="skill-list">
+          <ul>
+              {this.state.skills.map(skillInput => {
+                return(
+                  <li>{skillInput}</li>
+                )
+              })}
+          </ul>
+          <button className="btn-list-add" onClick={this.addSkill}><span class="mdi mdi-plus"></span></button>
+        </div>
+            
       </fieldset>
     )
   }

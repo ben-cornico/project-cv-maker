@@ -4,7 +4,7 @@ export class ExperienceForm extends Component {
         super();
         
         this.state = {
-            jobInfo: [<li><input type='text' id="info" name="info" data-key='0' onChange={props.onInfoChange}/></li>]
+            jobInfo: [<li className='info-list-item'><input type='text' id="info" name="info" data-key='0' onChange={props.onInfoChange}/></li>]
         }
         console.log(props)
 
@@ -14,7 +14,7 @@ export class ExperienceForm extends Component {
     addInfo = (e) => {
         e.preventDefault();
         this.setState({
-            jobInfo: [...this.state.jobInfo, <li><input type='text' id="info" name="info" data-key={this.state.jobInfo.length} onChange={this.props.onInfoChange} /></li>]
+            jobInfo: [...this.state.jobInfo, <li className='info-list-item'><input type='text' id="info" name="info" data-key={this.state.jobInfo.length} onChange={this.props.onInfoChange} /></li>]
         })
         this.props.addInfo(e)
     }
@@ -32,11 +32,14 @@ export class ExperienceForm extends Component {
                 <input type="text" name="locationYear" id="locationYear" onChange={this.props.onChange}/>
             </div>
 
-            <div className="exp-info">
-                <ul>
-                    {this.state.jobInfo}
-                </ul>
-                <button className='btn-add' onClick={this.addInfo} >Add Info</button>
+            <div className="exp-info-list">
+                <label>Info</label>
+                <div className="list">
+                    <ul>
+                        {this.state.jobInfo}
+                    </ul>
+                    <button className='btn-list-add' onClick={this.addInfo} ><span className='mdi mdi-plus'></span></button>
+                </div>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Temp from './Temp';
 
 export class Skills extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class Skills extends Component {
         <ul className="skill-list">
           {this.props.skills.map((skill) => {
             return (
-              <li>{skill ? skill : 'Skill Name'}</li>
+              <li>{skill ? skill : 'Skill'}</li>
             )
           })}
         </ul>
