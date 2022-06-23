@@ -114,6 +114,15 @@ export class MainOutput extends Component {
         })
     }
 
+    deleteSkill = (e) => {
+        const items = this.state.skills.slice(0, -1)
+        console.log(items)
+        this.setState({
+            ...this.state,
+            skills: items,
+        })
+    }
+
     handleSkillChange = (e) => {
         const key = e.target.dataset.key
         const skills = this.state.skills;
@@ -163,7 +172,7 @@ export class MainOutput extends Component {
                 <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange}/>
             </fieldset>
 
-            <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill}/>
+            <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill} deleteSkill={this.deleteSkill}/>
 
             <Education addEduc={this.addEduc} onChange={this.handleEducChange}/>
         </form>

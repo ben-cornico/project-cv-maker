@@ -1,4 +1,4 @@
-.btn-list-add {
+.btn-list-add, .btn-list-delete {
     border: none;
     font-size: large;
     display: flex;
@@ -11,7 +11,7 @@
     transition: 0.3s ease;
 }
 
-.btn-list-add:hover {
+.btn-list-add:hover, .btn-list-delete:hover{
     font-size: large;
     transform: rotate(360deg) scale(1.2);
     transition: 0.3s ease;
@@ -39,6 +39,11 @@
     padding-top: 3px;
     border-bottom: 2px solid #354458;
     margin-bottom: 0.5rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
 }
 
 
