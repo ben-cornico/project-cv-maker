@@ -18,13 +18,22 @@
    box-shadow: 2px 2px 5px #888888;
 }
 
-.btn-add {
+.btn-add, .btn-delete {
+    width: 100px;
     padding: 0.5rem 0.75rem;
     background-color: #354458;
     outline: none;
     border: none;
     color: #ffffff;
     cursor: pointer;
+}
+
+.btn-delete {
+    background-color: #cd4040;
+}
+.btn-delete:hover {
+    background-color: #b03939;
+    transition: 0.3s ease;
 }
 
 .btn-add:hover {
@@ -190,7 +199,7 @@ fieldset {
     width: 700px;
     border-radius: 10px;
 }
-li {
+li:not(.exp-info > li) {
     list-style-type: none;
 }
 
@@ -231,6 +240,7 @@ fieldset > * {
     border-bottom: 1px solid #354458;
 }
 
+
 .exp-info-list  {
     padding: 0.5rem 0;
 }
@@ -243,7 +253,10 @@ fieldset > * {
     margin: 0.5rem 0;
 }
 
-.education-form {
+.fieldset-education > ul > li:not(:last-child){
     border-bottom: 4px solid #000000;
+}
+
+.education-form {
     padding: 1rem 0;
 }

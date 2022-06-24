@@ -18,6 +18,15 @@ export class Education extends Component {
 
         this.props.addEduc()
     }
+
+    deleteEduc = (e) => {
+      e.preventDefault();
+      this.setState({
+        educList: this.state.educList.slice(0, -1)
+      })
+
+      this.props.deleteEduc()
+    }
   render() {
     return (
       <fieldset className='fieldset-education'>
@@ -25,8 +34,11 @@ export class Education extends Component {
             <ul>
                 {this.state.educList}
             </ul>
+        <div className="btn-group">
+          <button className="btn-add" onClick={this.addEduc}>Add More</button>
+          <button className="btn-delete" onClick={this.deleteEduc}>Delete</button>
+        </div>
         
-        <button className="btn-add" onClick={this.addEduc}>Add More</button>
       </fieldset>
     )
   }

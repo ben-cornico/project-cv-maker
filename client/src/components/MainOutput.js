@@ -100,6 +100,12 @@ export class MainOutput extends Component {
         })
     }
 
+    deleteExp = (e) => {
+        this.setState({
+            ...this.state, exp: this.state.exp.slice(0, -1),
+        })
+    }
+
     infoHandleChange = (e) => {
         
         this.setState({
@@ -163,6 +169,13 @@ export class MainOutput extends Component {
         })
     }
 
+    deleteEduc = (e) => {
+        this.setState({
+            ...this.state,
+            education: this.state.education.slice(0, -1)
+        })
+    }
+
     handleEducChange = (e) => {
         const educKey = e.target.parentNode.parentNode.dataset.key;
         const items = this.state.education;
@@ -182,12 +195,12 @@ export class MainOutput extends Component {
 
             <fieldset className="fieldset-exp">
                 <legend>Experience</legend>
-                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange} deleteInfo={this.deleteInfo}/>
+                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange} deleteInfo={this.deleteInfo} deleteExp={this.deleteExp}/> 
             </fieldset>
 
             <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill} deleteSkill={this.deleteSkill}/>
 
-            <Education addEduc={this.addEduc} onChange={this.handleEducChange}/>
+            <Education addEduc={this.addEduc} onChange={this.handleEducChange} deleteEduc={this.deleteEduc}/>
         </form>
         <Layout data={this.state}/>
       </>
