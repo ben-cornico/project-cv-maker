@@ -8,8 +8,6 @@ export class ExperienceForm extends Component {
         }
         console.log(props)
 
-        this.addInfo = this.addInfo.bind(this);
-        this.deleteInfo = this.deleteInfo.bind(this)
     }
 
     addInfo = (e) => {

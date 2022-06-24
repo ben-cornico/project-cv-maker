@@ -22,14 +22,36 @@ export class ExperienceFormComponent extends Component {
         })
         this.props.func();
     }
+
+    delete = (e) => {
+      e.preventDefault();
+      this.setState({
+        exp: this.state.exp.slice(0, -1)
+      })
+
+      this.props.deleteExp()
+    }
   render() {
     return (
-      <>
-        {this.state.exp}
-        <button className="btn-add" onClick={this.add}>
+      <div className='exp-container'>
+
+        <ul>
+          {this.state.exp.map(x => {
+            return (
+              <li>{x}</li>
+            )
+          })}
+        </ul>
+        <div className="btn-group">
+          <button className="btn-add" onClick={this.add}>
             Add More
-        </button>
-      </>
+          </button>
+          <button className="btn-delete" onClick={this.delete}>
+            Delete
+          </button>
+        </div>
+
+      </div>
     )
   }
 }
