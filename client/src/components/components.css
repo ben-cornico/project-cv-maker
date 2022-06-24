@@ -188,7 +188,6 @@ ul.skill-list > li {
 fieldset {
     padding: 1rem;
     width: 700px;
-    border: 2px solid;
     border-radius: 10px;
 }
 li {
@@ -238,4 +237,13 @@ fieldset > * {
 
 .skill-list > ul > li {
     margin: 0.5rem 0;
+}
+
+.fieldset-education > * {
+    margin: 0.5rem 0;
+}
+
+.education-form {
+    border-bottom: 4px solid #000000;
+    padding: 1rem 0;
 }

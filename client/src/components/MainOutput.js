@@ -58,7 +58,7 @@ export class MainOutput extends Component {
     }
 
     handleInfoOnChange = (e) => {
-        const expKey = e.target.parentNode.parentNode.parentNode.parentNode.dataset.key;
+        const expKey = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.key;
         const infoKey = e.target.dataset.key;
         let items = this.state.exp[expKey].info;
 
@@ -73,11 +73,25 @@ export class MainOutput extends Component {
 
     addInfo = (e) => {
         let items = this.state.exp
-        const expKey = e.target.parentNode.parentNode.dataset.key;
+
+        const expKey = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.key;
+        console.log(expKey)
+        console.log(items[expKey])
         items[expKey] ={...items[expKey], info: [...items[expKey].info, '']}
         this.setState({
             items
         })
+    }
+
+    deleteInfo = (e) => {
+        let items = this.state.exp;
+        console.log(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.key)
+        const expKey = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.dataset.key;
+        items[expKey] = {...items[expKey], info: items[expKey].info.slice(0, -1)}
+        this.setState({
+            items
+        })
+
     }
 
     addExp = (e) => {
@@ -134,7 +148,6 @@ export class MainOutput extends Component {
         })
     }
 
-
     profChange = (e) => {
         this.setState({
             ...this.state,
@@ -169,7 +182,7 @@ export class MainOutput extends Component {
 
             <fieldset className="fieldset-exp">
                 <legend>Experience</legend>
-                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange}/>
+                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange} deleteInfo={this.deleteInfo}/>
             </fieldset>
 
             <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill} deleteSkill={this.deleteSkill}/>

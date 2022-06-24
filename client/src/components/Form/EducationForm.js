@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 export class EducationForm extends Component {
   constructor(props) {
     super()
+    console.log(props)
   }
   render() {
     return (
-      <div className='eduction-form' data-key={this.props.indexKey}>
+      <div className='education-form' data-key={this.props.indexKey}>
         <div className="form-group">
             <label htmlFor="degreeName">Degree Name / Major</label>
             <input type="text" name="degreeName" id="degreeName" onChange={this.props.onChange}/>

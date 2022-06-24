@@ -8,7 +8,8 @@ export class ExperienceForm extends Component {
         }
         console.log(props)
 
-        this.addInfo = this.addInfo.bind(this)
+        this.addInfo = this.addInfo.bind(this);
+        this.deleteInfo = this.deleteInfo.bind(this)
     }
 
     addInfo = (e) => {
@@ -17,6 +18,15 @@ export class ExperienceForm extends Component {
             jobInfo: [...this.state.jobInfo, <li className='info-list-item'><input type='text' id="info" name="info" data-key={this.state.jobInfo.length} onChange={this.props.onInfoChange} /></li>]
         })
         this.props.addInfo(e)
+    }
+
+    deleteInfo = (e) => {
+        e.preventDefault();
+        this.setState({
+            jobInfo: this.state.jobInfo.slice(0, -1),
+        })
+
+        this.props.deleteInfo(e);
     }
 
   render() {
@@ -38,7 +48,11 @@ export class ExperienceForm extends Component {
                     <ul>
                         {this.state.jobInfo}
                     </ul>
-                    <button className='btn-list-add' onClick={this.addInfo} ><span className='mdi mdi-plus'></span></button>
+                    <div className="btn-group">
+                        <button className='btn-list-add' onClick={this.addInfo} ><span className='mdi mdi-plus'></span></button>
+                        <button className='btn-list-delete' onClick={this.deleteInfo}><span className='mdi mdi-minus'></span></button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
