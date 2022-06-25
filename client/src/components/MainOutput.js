@@ -190,19 +190,40 @@ export class MainOutput extends Component {
     return (
       <>
         <form>
-            <PersonalInfo infoChange={this.infoHandleChange} addressChange={this.addressHandleChange}/>
-            <ProfileSummary profChange={this.profChange}/>
+            <PersonalInfo infoChange={this.infoHandleChange}
+                addressChange={this.addressHandleChange}
+            />
+            <ProfileSummary
+                profChange={this.profChange}
+            />
 
             <fieldset className="fieldset-exp">
                 <legend>Experience</legend>
-                <ExperienceFormComponent func={this.addExp} onChange={this.handleExpOnChange} addInfo={this.addInfo} onInfoChange={this.handleInfoOnChange} deleteInfo={this.deleteInfo} deleteExp={this.deleteExp}/> 
+                <ExperienceFormComponent
+                    func={this.addExp}
+                    onChange={this.handleExpOnChange}
+                    addInfo={this.addInfo}
+                    onInfoChange={this.handleInfoOnChange}
+                    deleteInfo={this.deleteInfo}
+                    deleteExp={this.deleteExp}
+                /> 
             </fieldset>
 
-            <Skills skillChange={this.handleSkillChange} addSkill={this.addSkill} deleteSkill={this.deleteSkill}/>
+            <Skills
+                skillChange={this.handleSkillChange}
+                addSkill={this.addSkill}
+                deleteSkill={this.deleteSkill}
+            />
 
-            <Education addEduc={this.addEduc} onChange={this.handleEducChange} deleteEduc={this.deleteEduc}/>
+            <Education
+                addEduc={this.addEduc}
+                onChange={this.handleEducChange}
+                deleteEduc={this.deleteEduc}
+            />
         </form>
-        <Layout data={this.state}/>
+        <Layout
+            data={this.state}
+        />
       </>
     )
   }

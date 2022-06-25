@@ -253,7 +253,7 @@ fieldset > * {
     margin: 0.5rem 0;
 }
 
-.fieldset-education > ul > li:not(:last-child){
+.fieldset-education > ul > li:not(:last-child), .exp-list-item:not(:last-child){
     border-bottom: 4px solid #000000;
 }
 

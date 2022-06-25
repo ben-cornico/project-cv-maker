@@ -14,11 +14,21 @@ export class Layout extends Component {
   render() {
     return (
       <div className='cv-layout'>
-        <Header name={this.props.data.info.name}/>
+        <Header
+          name={this.props.data.info.name}
+        />
 
         <div className="cv-body">
-          <Main prof={this.props.data.profSummary} exp={this.props.data.exp}/>
-          <Sidebar data={this.props.data.info} skills={this.props.data.skills} edu={this.props.data.education}/>
+          <Main
+            prof={this.props.data.profSummary}
+            exp={this.props.data.exp}
+          />
+          
+          <Sidebar
+            data={this.props.data.info}
+            skills={this.props.data.skills}
+            edu={this.props.data.education}
+          />
         </div>
 
 

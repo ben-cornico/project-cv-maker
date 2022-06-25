@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 
 export class PersonalInfo extends Component {
-    
+    focus = () => {
+        console.log('asd')
+    }
   render() {
     return (
         <fieldset className='personal-info'>
@@ -9,7 +11,7 @@ export class PersonalInfo extends Component {
 
             <div className="form-group">
                 <label htmlFor="fName">Full Name</label>
-                <input type="text" id='fName' name='name' onChange={this.props.infoChange} />
+                <input type="text" id='fName' name='name' onChange={this.props.infoChange} onFocus={this.focus}/>
             </div>
 
             <div className="form-group">

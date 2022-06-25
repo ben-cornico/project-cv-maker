@@ -38,7 +38,7 @@ export class ExperienceFormComponent extends Component {
         <ul>
           {this.state.exp.map(x => {
             return (
-              <li>{x}</li>
+              <li className='exp-list-item'>{x}</li>
             )
           })}
         </ul>

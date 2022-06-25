@@ -10,8 +10,12 @@ export class Main extends Component {
   render() {
     return (
       <div className='main'>
-        <Profile data={this.props.prof}/>
-        <Experience exp={this.props.exp}/>
+        <Profile
+          data={this.props.prof}
+        />
+        <Experience
+          exp={this.props.exp}
+        />
       </div>
     )
   }
